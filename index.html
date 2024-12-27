@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="case_studies.css" />
@@ -19,13 +20,14 @@
     <link rel="stylesheet" href="blog.css" />
     <link rel="stylesheet" href="solutions.css" />
     <link rel="stylesheet" href="footer.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="main-hero-container">
@@ -41,15 +43,56 @@
                 alt="Softograph Logo"
               />
               <div class="nav-links" role="navigation">
-                <a href="#offerings" tabindex="0">Offerings</a>
+                <div class="nav-item dropdown">
+                  <a href="#offerings" tabindex="0">Offerings</a>
+                  <div class="dropdown-content">
+                    <a href="#code">Code that Knows You</a>
+                    <a href="#tech">Unlocking Frontier Tech</a>
+                    <a href="#strategies">Strategies that do Wonders</a>
+                    <a href="#decisions">Decisions Made Easy</a>
+                  </div>
+                </div>
                 <a href="#solutions" tabindex="0">Solutions</a>
                 <a href="#partners" tabindex="0">Partners</a>
                 <a href="#insights" tabindex="0">Insights</a>
                 <a href="#career" tabindex="0">Career</a>
               </div>
             </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
             <button class="cta-button" tabindex="0">Get Started</button>
           </header>
+          <div class="drawer-menu">
+            <div class="drawer-content">
+              <div class="drawer-header">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d65188df316aea5f83a840668bb3467cb65a581b62a013f7d343f0838e25cb4?apiKey=b01c7e4bd84f4d2cb00889f4e5559d20&"
+                  class="logo"
+                  alt="Softograph Logo"
+                />
+                <button class="drawer-close" aria-label="Close menu">×</button>
+              </div>
+              <div class="drawer-links">
+                <div class="drawer-item">
+                  <a href="#offerings">Offerings</a>
+                  <div class="drawer-submenu">
+                    <a href="#code">Code that Knows You</a>
+                    <a href="#tech">Unlocking Frontier Tech</a>
+                    <a href="#strategies">Strategies that do Wonders</a>
+                    <a href="#decisions">Decisions Made Easy</a>
+                  </div>
+                </div>
+                <a href="#solutions">Solutions</a>
+                <a href="#partners">Partners</a>
+                <a href="#insights">Insights</a>
+                <a href="#career">Career</a>
+              </div>
+            </div>
+          </div>
           <div class="main-hero-content-wrapper">
             <div class="hero-text">
               <h2 class="hero-subtitle">We Are Softograph</h2>
@@ -103,7 +146,6 @@
         We put information and knowledge into action.
       </div>
     </div>
-    <div class="narratives-section"></div>
     <div class="vertical-line-container">
       <div class="narratives-content-header">
         <div class="section-heading">Impact-Driven<br />Narratives</div>
