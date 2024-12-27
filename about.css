@@ -44,16 +44,10 @@
 
 @media (max-width: 768px) {
   .about-container {
-    padding: 60px 20px 30px;
+    padding: 20px;
   }
-
-  .about-description {
-    font-size: 14px;
-    line-height: 24px;
-  }
-
+  .about-description,
   .about-tagline {
-    font-size: 16px;
-    margin: 30px 0 0;
+    font-size: 14px;
   }
 }

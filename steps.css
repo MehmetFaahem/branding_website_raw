@@ -19,6 +19,7 @@
 .swiper-slide {
   height: auto !important;
   width: 25% !important;
+  min-width: 280px;
 }
 .step-header {
   display: flex;
@@ -75,8 +76,8 @@
 }
 @media (max-width: 768px) {
   .step-card {
+    width: 100%;
     padding: 20px;
-    min-height: 260px;
   }
   .swiper-slide {
     width: 300px !important;
@@ -105,4 +106,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.process-step-details {
+  padding: 15px;
 }

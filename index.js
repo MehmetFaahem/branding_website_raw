@@ -47,31 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animation setup
   setup();
 
-  const swiper = new Swiper(".case-studies-grid", {
-    slidesPerView: "auto",
-    spaceBetween: 32,
-    grabCursor: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        spaceBetween: 16,
-      },
-      // when window width is >= 480px
-      480: {
-        spaceBetween: 24,
-      },
-      // when window width is >= 992px
-      992: {
-        spaceBetween: 32,
-      },
-    },
-  });
-
-  const processStepsSwiper = new Swiper(".process-steps", {
+  // Update swiper configurations
+  const commonSwiperConfig = {
     slidesPerView: "auto",
     spaceBetween: 30,
     grabCursor: true,
@@ -90,75 +67,43 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 30,
       },
     },
-  });
+  };
 
-  const blogPostsSwiper = new Swiper(".blog-posts-container", {
-    slidesPerView: "auto",
-    spaceBetween: 30,
-    grabCursor: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      320: {
-        spaceBetween: 16,
-      },
-      480: {
-        spaceBetween: 20,
-      },
-      992: {
-        spaceBetween: 30,
-      },
-    },
-  });
-
-  const solutionsSwiper = new Swiper(".solutions-wrapper", {
-    slidesPerView: "auto",
-    spaceBetween: 30,
-    grabCursor: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      320: {
-        spaceBetween: 16,
-      },
-      480: {
-        spaceBetween: 20,
-      },
-      992: {
-        spaceBetween: 30,
-      },
-    },
-  });
+  // Initialize swipers with common config
+  const swiper = new Swiper(".case-studies-grid", commonSwiperConfig);
+  const processStepsSwiper = new Swiper(".process-steps", commonSwiperConfig);
+  const blogPostsSwiper = new Swiper(
+    ".blog-posts-container",
+    commonSwiperConfig
+  );
+  const solutionsSwiper = new Swiper(".solutions-wrapper", commonSwiperConfig);
 
   // Mobile Menu Functionality
   const menuToggle = document.querySelector(".menu-toggle");
-  const drawerMenu = document.querySelector(".drawer-menu");
+  const drawerMenu = document.getElementById("drawerMenu");
   const drawerClose = document.querySelector(".drawer-close");
-  const drawerItems = document.querySelectorAll(".drawer-item");
+  const drawerItems = document.querySelectorAll(".drawer-item > a");
 
+  // Toggle Drawer Menu
   menuToggle.addEventListener("click", () => {
-    drawerMenu.classList.add("active");
-    document.body.style.overflow = "hidden";
+    drawerMenu.classList.toggle("active");
+    document.body.style.overflow = drawerMenu.classList.contains("active")
+      ? "hidden"
+      : "";
   });
 
+  // Close Drawer Menu
   drawerClose.addEventListener("click", () => {
     drawerMenu.classList.remove("active");
     document.body.style.overflow = "";
   });
 
-  // Handle drawer submenu toggles
+  // Handle Submenu in Drawer
   drawerItems.forEach((item) => {
-    const link = item.querySelector("a");
-    if (link && item.querySelector(".drawer-submenu")) {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        item.classList.toggle("active");
-      });
-    }
+    item.addEventListener("click", (e) => {
+      const parent = e.target.parentElement;
+      parent.classList.toggle("active");
+    });
   });
 
   // Close drawer when clicking outside

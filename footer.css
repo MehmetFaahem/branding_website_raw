@@ -1,15 +1,12 @@
 .footer-container {
-  display: flex;
-  align-items: start;
-  gap: 40px 100px;
-  font-family: Montserrat, sans-serif;
-  color: rgba(255, 255, 255, 1);
-  line-height: 1.6;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 200px 117px 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 200px 5% 50px;
   max-width: 1360px;
   margin: 0 auto;
+  color: white;
+  font-family: Montserrat, sans-serif;
 }
 .company-info {
   align-self: stretch;
@@ -117,6 +114,7 @@
   gap: 10px;
   white-space: nowrap;
   justify-content: start;
+  opacity: 0.7;
 }
 .social-icon {
   aspect-ratio: 1;
@@ -132,15 +130,52 @@
 }
 @media (max-width: 991px) {
   .footer-container {
-    padding: 100px 20px 0;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 20px 50px;
+    gap: 40px;
   }
-  .copyright-text {
-    margin-top: 40px;
+
+  .company-info {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
   }
-  .company-links {
-    margin-right: 2px;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 60px 15px 30px;
+    gap: 20px;
   }
+}
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 60px 15px 30px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .offerings-section,
+  .solutions-section,
+  .company-section,
+  .social-section {
+    width: 100%;
+    align-items: center;
+  }
+
+  .section-title,
+  .list-item {
+    text-align: center;
+  }
+
   .social-link {
-    white-space: initial;
+    justify-content: center;
   }
+}
+.footer-nav-links {
+  display: flex;
+  flex-direction: column;
 }
