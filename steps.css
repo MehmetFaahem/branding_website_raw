@@ -13,8 +13,12 @@
   flex-direction: column;
   padding: 40px;
   border: 1px solid rgba(7, 11, 22, 1);
-  height: 100%;
   min-height: 300px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.step-card:hover {
+  transform: translateY(-5px);
 }
 .swiper-slide {
   height: auto !important;
@@ -35,6 +39,10 @@
   object-fit: contain;
   object-position: center;
   width: 80px;
+  transition: transform 0.3s ease;
+}
+.step-icon:hover {
+  transform: scale(1.05);
 }
 .step-content {
   display: flex;
@@ -55,16 +63,33 @@
   font-weight: 400;
   opacity: 0.7;
 }
-@media (max-width: 991px) {
-  .step-card {
-    padding: 30px;
-    min-height: 280px;
+@media (max-width: 1320px) {
+  .swiper-slide {
+    width: 33.33% !important;
   }
-  .step-content {
+  .step-card {
+    padding: 35px;
+    min-height: 320px;
+  }
+  .step-title {
+    font-size: 24px;
+    line-height: 38px;
+  }
+}
+@media (max-width: 991px) {
+  .process-steps {
     margin-top: 30px;
   }
   .swiper-slide {
-    width: 350px !important;
+    width: 50% !important;
+    min-width: 260px;
+  }
+  .step-card {
+    padding: 30px;
+    min-height: 260px;
+  }
+  .step-content {
+    margin-top: 30px;
   }
   .step-icon {
     width: 60px;
@@ -73,14 +98,26 @@
     font-size: 22px;
     line-height: 32px;
   }
+  .step-description {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .step-header {
+    gap: 30px;
+  }
 }
 @media (max-width: 768px) {
-  .step-card {
-    width: 100%;
-    padding: 20px;
+  .process-steps {
+    margin-top: 25px;
+    padding: 15px 0;
   }
   .swiper-slide {
-    width: 300px !important;
+    width: 85% !important;
+    min-width: 240px;
+  }
+  .step-card {
+    padding: 25px;
+    min-height: 240px;
   }
   .step-header {
     gap: 20px;
@@ -88,13 +125,48 @@
   .step-icon {
     width: 50px;
   }
+  .step-content {
+    margin-top: 25px;
+  }
   .step-title {
     font-size: 20px;
     line-height: 28px;
   }
   .step-description {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 22px;
+    margin-top: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .process-steps {
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+  .swiper-slide {
+    width: 100% !important;
+    min-width: 220px;
+  }
+  .step-card {
+    padding: 20px;
+    min-height: 220px;
+  }
+  .step-header {
+    gap: 15px;
+  }
+  .step-icon {
+    width: 45px;
+  }
+  .step-content {
+    margin-top: 20px;
+  }
+  .step-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .step-description {
+    font-size: 13px;
+    line-height: 20px;
   }
 }
 .visually-hidden {

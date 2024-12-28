@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animation setup
   setup();
 
-  // Update swiper configurations
-  const commonSwiperConfig = {
+  // Initialize swipers with unique configurations
+  const caseStudiesSwiper = new Swiper(".case-studies-grid", {
     slidesPerView: "auto",
     spaceBetween: 30,
     grabCursor: true,
@@ -67,16 +67,70 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 30,
       },
     },
-  };
+  });
 
-  // Initialize swipers with common config
-  const swiper = new Swiper(".case-studies-grid", commonSwiperConfig);
-  const processStepsSwiper = new Swiper(".process-steps", commonSwiperConfig);
-  const blogPostsSwiper = new Swiper(
-    ".blog-posts-container",
-    commonSwiperConfig
-  );
-  const solutionsSwiper = new Swiper(".solutions-wrapper", commonSwiperConfig);
+  const processStepsSwiper = new Swiper(".process-steps", {
+    slidesPerView: "auto",
+    spaceBetween: 25,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      320: {
+        spaceBetween: 12,
+      },
+      480: {
+        spaceBetween: 18,
+      },
+      992: {
+        spaceBetween: 25,
+      },
+    },
+  });
+
+  const blogPostsSwiper = new Swiper(".blog-posts-container", {
+    slidesPerView: "auto",
+    spaceBetween: 35,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      320: {
+        spaceBetween: 18,
+      },
+      480: {
+        spaceBetween: 22,
+      },
+      992: {
+        spaceBetween: 35,
+      },
+    },
+  });
+
+  const solutionsSwiper = new Swiper(".solutions-wrapper", {
+    slidesPerView: "auto",
+    spaceBetween: 28,
+    grabCursor: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      320: {
+        spaceBetween: 14,
+      },
+      480: {
+        spaceBetween: 19,
+      },
+      992: {
+        spaceBetween: 28,
+      },
+    },
+  });
 
   // Mobile Menu Functionality
   const menuToggle = document.querySelector(".menu-toggle");

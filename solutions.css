@@ -82,7 +82,7 @@
 
 @media (max-width: 1200px) {
   .solutions-card {
-    padding: 0 20px;
+    padding: 0 0px;
   }
 
   .solutions-image {
@@ -97,19 +97,20 @@
 
 @media (max-width: 991px) {
   .solutions-card {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    /* padding: 0 0px;
+    width: 90%; */
   }
 
-  .solutions-image {
+  /* .solutions-image {
     width: 100%;
     height: 250px;
   }
 
   .solutions-content {
     width: 100%;
-    padding: 0 20px;
-  }
+    padding: 0 0px;
+  } */
 }
 
 @media (max-width: 768px) {
@@ -135,6 +136,11 @@
 
   .solutions-cta {
     margin-top: 20px;
+  }
+
+  .solutions-content {
+    width: 90%;
+    padding: 0 0px;
   }
 }
 
