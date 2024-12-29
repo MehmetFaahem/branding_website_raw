@@ -1,5 +1,9 @@
 # Softograph (Landing Page)
 
+## Live Link:
+
+### https://mehmetfaahem.github.io/branding_website_raw/
+
 ## Project Setup
 
 Download the project and double click on the index.html file to open the project in your browser.
